@@ -7,25 +7,32 @@ public class Game {
     //private final static int player1 = 1;
     //private final static int player2 = 2;
     private int turn = 1;
+    private int winLength;
     private int[][] board;
     private int boardDimensions;
     private List<int[]> moveList;  
     
 
-    public Game(int size) {
+    public Game(int size, int winCondition) {
         if(!legalCoord(size)) {
             //Chuck an error
         }
-        
-        board = new int[size][size];
+        board = makeBoard(size);
         boardDimensions = size;
         moveList = new ArrayList<int[]>();
+        winLength = winCondition;
+    }
 
+    public int[][] makeBoard(int size) {
+
+        int[][] board = new int[size][size];
         for(int i = 0; i < size; i++) {
             for(int j = 0; j < size; j++) {
                 board[i][j] = 0;
             }
         }
+        
+        return board;
     }
 
     public boolean legalCoord(int size) {
@@ -84,11 +91,24 @@ public class Game {
 
         return infoReturn;
     }
+    private int movesMade() {
+        return moveList.size();
+    }
 
+    private int movesLeft() {
+        return (boardDimensions * boardDimensions - movesMade());
+    }
+    
+    public void resetGame() {
+        board = makeBoard(boardDimensions);
+        moveList = new ArrayList<int[]>();
+        turn = 1;
+    }
     public void undoLastMove() {
         if(moveList.size() != 0) {
             int[] move = moveList.remove(moveList.size() - 1);
             board[move[1]][move[0]] = 0;
+            changeTurn();
         }
         //Maybe have it throw an error but nothing is ok for now
     }
@@ -123,55 +143,93 @@ public class Game {
     }
 
     public boolean TleftTobRightDiagonal(int xCoord, int yCoord) {
-        int currentTurn = turn; 
         int i = 0;
-        boolean win = true;
-    
-        while(currentTurn == turn && i < boardDimensions)
-        {
-            if(board[i][i] != turn) {
-                return false;
-            }
+        int j = xCoord - yCoord;
+        int consecutiveTokens = 0;
+        
+        if(j < 0) {
+            i = 0 - j;
+            j = 0;
         }
-        i++;
-
-        return win;
+        while(i < boardDimensions)
+        {
+            if(board[j][i] != turn) {
+                consecutiveTokens = 0;
+            }
+            else {
+                consecutiveTokens++;
+            }    
+            i++;
+        }
+        
+        if(consecutiveTokens >= winLength) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public boolean tRightTobLeftDiagonal(int xCoord, int yCoord) {
-        int currentTurn = turn; 
-        int i = boardDimensions - 1;
-        int j = 0;
-        boolean win = true;
+        int consecutiveTokens = 0;
+        int i = 0;
+        int j = xCoord + yCoord;
+        if(j > (boardDimensions - 1)) {
+            i = j - boardDimensions - 1; 
+            j = boardDimensions - 1;
+        } 
     
-        while(currentTurn == turn && i < boardDimensions)
+        while(i >= 0 && j < boardDimensions)
         {
-            if(board[i][j] != turn) {
-                return false;
+            if(board[j][i] != turn) {
+                consecutiveTokens = 0;
             }
+            else {
+                consecutiveTokens++;
+            }    
+            i--;
+            j++;
         }
-        i--;
-        j++;
-
-        return win;
         
+        if(consecutiveTokens >= winLength) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public boolean topToBottom(int xCoord, int yCoord) {
+        int consecutiveTokens = 0;
         for(int i = 0; i < boardDimensions; i++) {
             if(board[i][xCoord] != turn) {
-                return false;
+                consecutiveTokens = 0;
+            }
+            else {
+                consecutiveTokens++;
             }
         }
-        return true;
+        
+        if(consecutiveTokens >= winLength) {
+            return true;
+        }
+        return false;
     }
 
     public boolean leftToRight(int xCoord, int yCoord) {
-         for(int i = 0; i < boardDimensions; i++) {
+        int consecutiveTokens = 0;  
+        for(int i = 0; i < boardDimensions; i++) {
             if(board[yCoord][i] != turn) {
-                return false;
+                consecutiveTokens = 0;
+            }
+            else {
+                consecutiveTokens++;
             }
         }
-        return true;
+        
+        if(consecutiveTokens >= winLength) {
+            return true;
+        }
+        return false;
     }
 }
