@@ -158,16 +158,16 @@ public class Game {
             }
             else {
                 consecutiveTokens++;
-            }    
+            }   
+            
+            if(consecutiveTokens >= winLength) {
+                return true;
+            }
+            
             i++;
         }
-        
-        if(consecutiveTokens >= winLength) {
-            return true;
-        }
-        else {
-            return false;
-        }
+
+        return false;
     }
 
     public boolean tRightTobLeftDiagonal(int xCoord, int yCoord) {
@@ -187,16 +187,16 @@ public class Game {
             else {
                 consecutiveTokens++;
             }    
+
+            if(consecutiveTokens >= winLength) {
+                return true;
+            }
             i--;
             j++;
         }
         
-        if(consecutiveTokens >= winLength) {
-            return true;
-        }
-        else {
-            return false;
-        }
+
+        return false;
     }
 
     public boolean topToBottom(int xCoord, int yCoord) {
@@ -208,11 +208,12 @@ public class Game {
             else {
                 consecutiveTokens++;
             }
+        
+            if(consecutiveTokens >= winLength) {
+                return true;
+            }
         }
         
-        if(consecutiveTokens >= winLength) {
-            return true;
-        }
         return false;
     }
 
@@ -225,11 +226,11 @@ public class Game {
             else {
                 consecutiveTokens++;
             }
+            if(consecutiveTokens >= winLength) {
+                return true;
+            }
         }
         
-        if(consecutiveTokens >= winLength) {
-            return true;
-        }
         return false;
     }
 }
