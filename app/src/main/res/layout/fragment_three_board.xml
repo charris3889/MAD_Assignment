@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThreeBoardFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horLine1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horLine2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horLine3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.6" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/horLine4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.8" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertLine1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertLine2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertLine3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/vertLine4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.8"/>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star"
+            app:layout_constraintTop_toTopOf="@id/horLine1"
+            app:layout_constraintBottom_toTopOf="@id/horLine2"
+            app:layout_constraintStart_toStartOf="@id/vertLine1"
+            app:layout_constraintEnd_toEndOf="@id/vertLine2"/>
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star"
+            app:layout_constraintTop_toTopOf="@id/horLine1"
+            app:layout_constraintBottom_toTopOf="@id/horLine2"
+            app:layout_constraintStart_toStartOf="@id/vertLine2"
+            app:layout_constraintEnd_toEndOf="@id/vertLine3"/>
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star"
+            app:layout_constraintTop_toTopOf="@id/horLine1"
+            app:layout_constraintBottom_toTopOf="@id/horLine2"
+            app:layout_constraintStart_toStartOf="@id/vertLine3"
+            app:layout_constraintEnd_toEndOf="@id/vertLine4"/>
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star"
+            app:layout_constraintTop_toTopOf="@id/horLine2"
+            app:layout_constraintBottom_toTopOf="@id/horLine3"
+            app:layout_constraintStart_toStartOf="@id/vertLine1"
+            app:layout_constraintEnd_toEndOf="@id/vertLine2"/>
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star"
+            app:layout_constraintTop_toTopOf="@id/horLine2"
+            app:layout_constraintBottom_toTopOf="@id/horLine3"
+            app:layout_constraintStart_toStartOf="@id/vertLine2"
+            app:layout_constraintEnd_toEndOf="@id/vertLine3"/>
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star"
+            app:layout_constraintTop_toTopOf="@id/horLine2"
+            app:layout_constraintBottom_toTopOf="@id/horLine3"
+            app:layout_constraintStart_toStartOf="@id/vertLine3"
+            app:layout_constraintEnd_toEndOf="@id/vertLine4"/>
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star"
+            app:layout_constraintTop_toTopOf="@id/horLine3"
+            app:layout_constraintBottom_toTopOf="@id/horLine4"
+            app:layout_constraintStart_toStartOf="@id/vertLine1"
+            app:layout_constraintEnd_toEndOf="@id/vertLine2"/>
+
+        <ImageButton
+            android:id="@+id/imageButton8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star"
+            app:layout_constraintTop_toTopOf="@id/horLine3"
+            app:layout_constraintBottom_toTopOf="@id/horLine4"
+            app:layout_constraintStart_toStartOf="@id/vertLine2"
+            app:layout_constraintEnd_toEndOf="@id/vertLine3"/>
+
+        <ImageButton
+            android:id="@+id/imageButton9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/btn_star"
+            app:layout_constraintTop_toTopOf="@id/horLine3"
+            app:layout_constraintBottom_toTopOf="@id/horLine4"
+            app:layout_constraintStart_toStartOf="@id/vertLine3"
+            app:layout_constraintEnd_toEndOf="@id/vertLine4"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
