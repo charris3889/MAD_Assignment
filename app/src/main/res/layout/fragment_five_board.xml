@@ -1,20 +1,316 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FiveBoardFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline"
+        android:id="@+id/horLine1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horLine2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horLine3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/horLine4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertLine1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertLine2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertLine3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/vertLine4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8"/>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintTop_toTopOf="@id/horLine1"
+        app:layout_constraintBottom_toTopOf="@id/horLine2"
+        app:layout_constraintStart_toStartOf="@id/vertLine1"
+        app:layout_constraintEnd_toEndOf="@id/vertLine2"/>
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintTop_toTopOf="@id/horLine1"
+        app:layout_constraintBottom_toTopOf="@id/horLine2"
+        app:layout_constraintStart_toStartOf="@id/vertLine2"
+        app:layout_constraintEnd_toEndOf="@id/vertLine3"/>
+
+    <ImageButton
+        android:id="@+id/imageButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintTop_toTopOf="@id/horLine1"
+        app:layout_constraintBottom_toTopOf="@id/horLine2"
+        app:layout_constraintStart_toStartOf="@id/vertLine3"
+        app:layout_constraintEnd_toEndOf="@id/vertLine4"/>
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintTop_toTopOf="@id/horLine2"
+        app:layout_constraintBottom_toTopOf="@id/horLine3"
+        app:layout_constraintStart_toStartOf="@id/vertLine1"
+        app:layout_constraintEnd_toEndOf="@id/vertLine2"/>
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintTop_toTopOf="@id/horLine2"
+        app:layout_constraintBottom_toTopOf="@id/horLine3"
+        app:layout_constraintStart_toStartOf="@id/vertLine2"
+        app:layout_constraintEnd_toEndOf="@id/vertLine3"/>
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintTop_toTopOf="@id/horLine2"
+        app:layout_constraintBottom_toTopOf="@id/horLine3"
+        app:layout_constraintStart_toStartOf="@id/vertLine3"
+        app:layout_constraintEnd_toEndOf="@id/vertLine4"/>
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintTop_toTopOf="@id/horLine3"
+        app:layout_constraintBottom_toTopOf="@id/horLine4"
+        app:layout_constraintStart_toStartOf="@id/vertLine1"
+        app:layout_constraintEnd_toEndOf="@id/vertLine2"/>
+
+    <ImageButton
+        android:id="@+id/imageButton8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintTop_toTopOf="@id/horLine3"
+        app:layout_constraintBottom_toTopOf="@id/horLine4"
+        app:layout_constraintStart_toStartOf="@id/vertLine2"
+        app:layout_constraintEnd_toEndOf="@id/vertLine3"/>
+
+    <ImageButton
+        android:id="@+id/imageButton9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintTop_toTopOf="@id/horLine3"
+        app:layout_constraintBottom_toTopOf="@id/horLine4"
+        app:layout_constraintStart_toStartOf="@id/vertLine3"
+        app:layout_constraintEnd_toEndOf="@id/vertLine4"/>
+
+    <ImageButton
+        android:id="@+id/imageButton10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toTopOf="@+id/horLine1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/vertLine1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toTopOf="@+id/horLine1"
+        app:layout_constraintEnd_toStartOf="@+id/vertLine2"
+        app:layout_constraintStart_toEndOf="@+id/vertLine1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toTopOf="@+id/horLine1"
+        app:layout_constraintEnd_toStartOf="@+id/vertLine3"
+        app:layout_constraintStart_toStartOf="@+id/vertLine2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toTopOf="@+id/horLine1"
+        app:layout_constraintEnd_toStartOf="@+id/vertLine4"
+        app:layout_constraintStart_toStartOf="@+id/vertLine3"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toTopOf="@+id/horLine1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vertLine4"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toTopOf="@+id/horLine2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vertLine1"
+        app:layout_constraintTop_toBottomOf="@+id/horLine1"  />
+
+    <ImageButton
+        android:id="@+id/imageButton16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toTopOf="@+id/horLine2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vertLine4"
+        app:layout_constraintTop_toTopOf="@+id/horLine1" />
+
+    <ImageButton
+        android:id="@+id/imageButton17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toTopOf="@+id/horLine3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vertLine1"
+        app:layout_constraintTop_toBottomOf="@+id/horLine2"  />
+
+    <ImageButton
+        android:id="@+id/imageButton18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toTopOf="@+id/horLine3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vertLine4"
+        app:layout_constraintTop_toTopOf="@+id/horLine2" />
+
+    <ImageButton
+        android:id="@+id/imageButton19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toTopOf="@+id/horLine4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vertLine1"
+        app:layout_constraintTop_toBottomOf="@+id/horLine3"  />
+
+    <ImageButton
+        android:id="@+id/imageButton20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toTopOf="@+id/horLine4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vertLine4"
+        app:layout_constraintTop_toTopOf="@+id/horLine3" />
+
+    <ImageButton
+        android:id="@+id/imageButton21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vertLine1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/horLine4" />
+
+    <ImageButton
+        android:id="@+id/imageButton22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vertLine2"
+        app:layout_constraintStart_toEndOf="@+id/vertLine1"
+        app:layout_constraintTop_toTopOf="@+id/horLine4" />
+
+    <ImageButton
+        android:id="@+id/imageButton23"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vertLine3"
+        app:layout_constraintStart_toStartOf="@+id/vertLine2"
+        app:layout_constraintTop_toTopOf="@+id/horLine4" />
+
+    <ImageButton
+        android:id="@+id/imageButton24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/vertLine4"
+        app:layout_constraintStart_toStartOf="@+id/vertLine3"
+        app:layout_constraintTop_toTopOf="@+id/horLine4" />
+
+    <ImageButton
+        android:id="@+id/imageButton25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/vertLine4"
+        app:layout_constraintTop_toTopOf="@+id/horLine4" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
